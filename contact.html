@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Us | Moda Luxe PH</title>
+
+<link rel="icon" type="image/png" href="logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #fbf8f2;
+    color: #382820;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(198,164,119,.12), transparent 35%),
+        radial-gradient(circle at 85% 70%, rgba(215,187,146,.15), transparent 35%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* HEADER */
+
+header {
+    width: 100%;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(251,248,242,.94);
+    border-bottom: 1px solid #e4dacb;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(15px);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand-logo {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #c5a77e;
+    box-shadow: 0 0 15px rgba(190,151,98,.35);
+    animation: logoGlow 3s infinite alternate;
+}
+
+@keyframes logoGlow {
+    from {
+        box-shadow: 0 0 10px rgba(190,151,98,.3);
+    }
+    to {
+        box-shadow: 0 0 25px rgba(190,151,98,.7);
+    }
+}
+
+.logo-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 29px;
+    letter-spacing: 3px;
+    color: #493529;
+}
+
+nav {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #493529;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: .4s;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 1px;
+    background: #a17d5d;
+    transition: .4s;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: #a17d5d;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 370px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 70px 20px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+        135deg,
+        #f7f1e8,
+        #eee3d4,
+        #faf6ef,
+        #e9ddcc
+    );
+    background-size: 300% 300%;
+    animation: goldenBackground 12s ease infinite;
+}
+
+@keyframes goldenBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+        110deg,
+        transparent 40%,
+        rgba(255,255,255,.4) 50%,
+        transparent 60%
+    );
+    animation: heroShine 7s infinite;
+}
+
+@keyframes heroShine {
+    from { transform: translateX(-60%); }
+    to { transform: translateX(60%); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 1.3s ease;
+}
+
+.small-title {
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #987753;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(55px, 8vw, 85px);
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: #493529;
+}
+
+.hero p {
+    font-size: 12px;
+    letter-spacing: 2px;
+    line-height: 2;
+    color: #776657;
+    margin-top: 15px;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* CONTACT SECTION */
+
+.contact-section {
+    padding: 100px 9%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 65px;
+    animation: fadeUp 1s ease;
+}
+
+.section-heading h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 500;
+    color: #493529;
+}
+
+.section-heading p {
+    color: #8c7967;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-top: 12px;
+}
+
+.gold-line {
+    width: 65px;
+    height: 1px;
+    background: #b69a7b;
+    margin: 20px auto;
+}
+
+/* MAIN LAYOUT */
+
+.contact-container {
+    max-width: 1150px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: .85fr 1.15fr;
+    gap: 45px;
+}
+
+/* CONTACT INFORMATION */
+
+.contact-info {
+    padding: 45px 38px;
+    background: linear-gradient(145deg, #eee4d6, #f8f3eb);
+    border: 1px solid #e1d2bf;
+    position: relative;
+    overflow: hidden;
+    animation: fadeUp 1.2s ease;
+}
+
+.contact-info::before {
+    content: "✧";
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 55px;
+    color: rgba(166,132,91,.2);
+}
+
+.contact-info h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 39px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.contact-info > p {
+    color: #806e5d;
+    font-size: 12px;
+    line-height: 2;
+    margin-bottom: 40px;
+}
+
+.info-item {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 35px;
+    align-items: flex-start;
+}
+
+.info-icon {
+    width: 43px;
+    height: 43px;
+    border: 1px solid #c5a77e;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    color: #987753;
+    flex-shrink: 0;
+    transition: .4s;
+}
+
+.info-item:hover .info-icon {
+    background: #b69a7b;
+    color: white;
+    box-shadow: 0 0 18px rgba(182,154,123,.5);
+}
+
+.info-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.info-item p,
+.info-item a {
+    color: #806e5d;
+    font-size: 11px;
+    line-height: 1.9;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.info-item a:hover {
+    color: #a17d5d;
+}
+
+/* CONTACT FORM */
+
+.contact-form {
+    padding: 45px;
+    background: rgba(255,255,255,.65);
+    border: 1px solid #e5dacb;
+    box-shadow: 0 10px 35px rgba(100,75,48,.06);
+    animation: fadeUp 1.4s ease;
+}
+
+.contact-form h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 39px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.contact-form > p {
+    color: #907e6d;
+    font-size: 11px;
+    margin-bottom: 35px;
+}
+
+.form-group {
+    margin-bottom: 23px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #725b47;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #e1d5c6;
+    background: #fcfaf6;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: #493529;
+    transition: .4s;
+}
+
+.form-group textarea {
+    height: 140px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #b69a7b;
+    box-shadow: 0 0 13px rgba(182,154,123,.2);
+    background: white;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #b7a99a;
+}
+
+/* SEND BUTTON */
+
+.submit-btn {
+    width: 100%;
+    padding: 17px;
+    border: 1px solid #a98a65;
+    background: linear-gradient(120deg, #927452, #c5a77e, #927452);
+    background-size: 200%;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.submit-btn:hover {
+    background-position: right;
+    box-shadow: 0 5px 25px rgba(169,138,101,.35);
+    letter-spacing: 4px;
+}
+
+/* QUOTE */
+
+.quote-section {
+    text-align: center;
+    padding: 85px 20px;
+    background: linear-gradient(120deg, #eee4d6, #f9f5ed);
+}
+
+.quote-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(30px, 5vw, 48px);
+    font-weight: 500;
+    color: #493529;
+}
+
+.quote-section p {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #987753;
+    margin-top: 20px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 45px 8%;
+    text-align: center;
+    background: #f2ece2;
+    border-top: 1px solid #e2d6c7;
+}
+
+footer h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+footer p {
+    font-size: 10px;
+    color: #8b7968;
+    letter-spacing: 1px;
+    line-height: 2.2;
+}
+
+.footer-links {
+    margin: 20px 0;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #806e5d;
+    font-size: 10px;
+    margin: 0 12px;
+    letter-spacing: 1px;
+    transition: .3s;
+}
+
+.footer-links a:hover {
+    color: #b18d63;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 850px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-section {
+        padding: 70px 6%;
+    }
+}
+
+@media(max-width: 500px) {
+
+    .brand-logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .logo-text {
+        font-size: 23px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 9px;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 30px 23px;
+    }
+
+    .section-heading h2 {
+        font-size: 39px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo-container">
+
+        <img src="logo.png" class="brand-logo" alt="Moda Luxe PH Logo">
+
+        <div class="logo-text">MODA LUXE PH</div>
+
+    </div>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="collection.html">Collection</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="small-title">MODA LUXE PH</div>
+
+        <h1>Get In Touch</h1>
+
+        <p>
+            WE WOULD LOVE TO HEAR FROM YOU
+            <br>
+            YOUR JOURNEY TO ELEGANCE STARTS HERE.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- CONTACT SECTION -->
+
+<section class="contact-section">
+
+    <div class="section-heading">
+
+        <div class="small-title">WE ARE HERE FOR YOU</div>
+
+        <h2>Let's Connect</h2>
+
+        <div class="gold-line"></div>
+
+        <p>
+            Have a question or need assistance?
+            Feel free to reach out to us.
+        </p>
+
+    </div>
+
+    <div class="contact-container">
+
+        <!-- CONTACT INFORMATION -->
+
+        <div class="contact-info">
+
+            <h2>Contact Information</h2>
+
+            <p>
+                At Moda Luxe PH, we value every connection.
+                Our team is always happy to assist you with
+                your questions and concerns.
+            </p>
+
+            <div class="info-item">
+
+                <div class="info-icon">✉</div>
+
+                <div>
+                    <h3>Email Address</h3>
+                    <a href="mailto:yukinacunanan10@gmail.com">
+                        yukinacunanan10@gmail.com
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="info-item">
+
+                <div class="info-icon">☎</div>
+
+                <div>
+                    <h3>Phone Number</h3>
+                    <p>Contact us through our email.</p>
+                </div>
+
+            </div>
+
+            <div class="info-item">
+
+                <div class="info-icon">⌖</div>
+
+                <div>
+                    <h3>Location</h3>
+                    <p>Philippines</p>
+                </div>
+
+            </div>
+
+            <div class="info-item">
+
+                <div class="info-icon">◷</div>
+
+                <div>
+                    <h3>Customer Assistance</h3>
+                    <p>We welcome your inquiries anytime.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CONTACT FORM -->
+
+        <div class="contact-form">
+
+            <h2>Send Us a Message</h2>
+
+            <p>
+                Fill out the form below and let us know how we can help.
+            </p>
+
+            <form
+                action="https://formsubmit.co/yukinacunanan10@gmail.com"
+                method="POST"
+            >
+
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="New Customer Inquiry - Moda Luxe PH"
+                >
+
+                <input
+                    type="hidden"
+                    name="_template"
+                    value="table"
+                >
+
+                <input
+                    type="hidden"
+                    name="_captcha"
+                    value="true"
+                >
+
+                <div class="form-group">
+
+                    <label for="name">Full Name</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="email">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email address"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="subject">Subject</label>
+
+                    <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        placeholder="What is your inquiry about?"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="message">Your Message</label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Write your message here..."
+                        required
+                    ></textarea>
+
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Send Message ✧
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- QUOTE -->
+
+<section class="quote-section">
+
+    <h2>
+        "Elegance is not just a style,
+        <br>
+        it is a statement."
+    </h2>
+
+    <p>THE ART OF TIMELESS LUXURY</p>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>MODA LUXE PH</h2>
+
+    <p>
+        WHERE TIMELESS ELEGANCE MEETS MODERN LUXURY.
+    </p>
+
+    <div class="footer-links">
+
+        <a href="home.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="collection.html">COLLECTION</a>
+        <a href="contact.html">CONTACT</a>
+
+    </div>
+
+    <p>© 2026 MODA LUXE PH. ALL RIGHTS RESERVED.</p>
+
+</footer>
+
+</body>
+</html>
+</html>
